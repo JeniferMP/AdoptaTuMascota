@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="#ecf0f1"
     tools:context=".LoginActivity">
 
@@ -21,23 +22,36 @@
             android:layout_gravity="center"
             android:background="@drawable/portada" />
 
-        <EditText
-            android:id="@+id/login_txt_usuario"
+        <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:layout_marginTop="10dp"
-            android:background="#bdc3c7"
-            android:hint="@string/login_txt_usuario"
-            android:inputType="textEmailAddress"
-            android:maxLength="60"/>
+            android:layout_height="wrap_content">
+            <EditText
+                android:id="@+id/login_txt_usuario"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="10dp"
+                android:background="#bdc3c7"
+                android:hint="@string/login_txt_usuario"
+                android:inputType="textEmailAddress"
+                android:maxLength="60"/>
+        </com.google.android.material.textfield.TextInputLayout>
 
-        <EditText
-            android:id="@+id/login_txt_contrasenia"
+
+        <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:layout_marginTop="10dp"
-            android:background="#bdc3c7"
-            android:hint="@string/login_txt_contrasenia" />
+            android:layout_height="wrap_content"
+            app:passwordToggleEnabled="true">
+            <EditText
+                android:id="@+id/login_txt_contrasenia"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="10dp"
+                android:background="#bdc3c7"
+                android:hint="@string/login_txt_contrasenia"
+                android:inputType="textPassword"
+                android:maxLength="20"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
         <CheckBox
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
