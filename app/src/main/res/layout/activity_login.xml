@@ -19,7 +19,7 @@
             android:layout_width="240dp"
             android:layout_height="226dp"
             android:layout_gravity="center"
-            android:background="@drawable/login" />
+            android:background="@drawable/portada" />
 
         <EditText
             android:id="@+id/login_txt_usuario"
