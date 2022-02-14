@@ -4,19 +4,89 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="#ecf0f1"
     tools:context=".LoginActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:orientation="vertical"
 
-        <Button
-            android:id="@+id/button2"
+        android:layout_margin="35dp"
+        android:layout_marginBottom="0dp">
+
+        <ImageView
+            android:layout_width="240dp"
+            android:layout_height="226dp"
+            android:layout_gravity="center"
+            android:background="@drawable/portada" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <EditText
+                android:id="@+id/login_txt_usuario"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="10dp"
+                android:background="#bdc3c7"
+                android:hint="@string/login_txt_usuario"
+                android:inputType="textEmailAddress"
+                android:maxLength="60"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/button"
-            android:textStyle="bold" />
+            app:passwordToggleEnabled="true">
+            <EditText
+                android:id="@+id/login_txt_contrasenia"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="10dp"
+                android:background="#bdc3c7"
+                android:hint="@string/login_txt_contrasenia"
+                android:inputType="textPassword"
+                android:maxLength="20"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <CheckBox
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="Recordar"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/login_btn_ingresar"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:textAllCaps="false"
+                android:text="@string/login_btn_ingresar" />
+            <Button
+                android:id="@+id/login_btn_salir"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:textAllCaps="false"
+                android:text="@string/login_btn_salir" />
+        </LinearLayout>
+        <TextView
+            android:id="@+id/login_lbl_registrate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="@string/login_lbl_registrate"
+            tools:layout_editor_absoluteX="3dp"
+            tools:layout_editor_absoluteY="542dp" />
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
