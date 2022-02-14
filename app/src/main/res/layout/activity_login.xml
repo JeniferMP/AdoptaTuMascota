@@ -53,25 +53,20 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <CheckBox
+            android:id="@+id/login_chk_recordar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:text="Recordar"/>
 
-        <LinearLayout
-            android:layout_width="match_parent"
+        <Button
+            android:id="@+id/login_btn_ingresar"
+            android:layout_width="176dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:orientation="horizontal">
+            android:layout_gravity="center"
+            android:text="@string/login_btn_ingresar"
+            android:textAllCaps="false" />
 
-            <Button
-                android:id="@+id/login_btn_ingresar"
-                android:layout_width="120dp"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="30dp"
-                android:textAllCaps="false"
-                android:text="@string/login_btn_ingresar"/>
-        </LinearLayout>
         <TextView
             android:id="@+id/login_lbl_registrate"
             android:layout_width="match_parent"
