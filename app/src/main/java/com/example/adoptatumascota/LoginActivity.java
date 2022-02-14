@@ -40,6 +40,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
 
     private void iniciar_sesion(String usuario, String contrasenia) {
+
     }
 
     private void registrar_usuario() {

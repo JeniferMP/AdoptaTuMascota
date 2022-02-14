@@ -1,5 +1,10 @@
 <resources>
     <string name="app_name">AdoptaTuMascota</string>
+    <string name="ini_lbl_mensaje">Iniciando</string>
+    <string name="login_txt_usuario">usuario@dominio.com</string>
+    <string name="login_txt_contrasenia">contraseña</string>
+    <string name="login_btn_ingresar">Ingresar</string>
+    <string name="login_lbl_registrate">Regístrate</string>
     <string name="button">Button</string>
     <string name="reg_btn_atras">Atras</string>
     <string name="reg_btn_registrar">Registro</string>
