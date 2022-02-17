@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".RegistroAnuncioActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="40dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+        android:layout_marginBottom="20dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="35dp"
+            android:gravity="center_vertical"
+            android:hint="Registrar Anuncio"
+            android:textSize="30sp" />
+
+
+        <EditText
+            android:layout_width="301dp"
+            android:layout_height="49dp"
+            android:layout_margin="4dp"
+            android:layout_marginLeft="50dp"
+            android:layout_marginRight="50dp"
+            android:gravity="center"
+            android:hint="Nombre"
+            tools:layout_editor_absoluteX="16dp"
+            tools:layout_editor_absoluteY="498dp" />
+
+        <EditText
+            android:layout_width="301dp"
+            android:layout_height="49dp"
+            android:layout_margin="4dp"
+            android:gravity="center"
+            android:hint="Raza"
+            tools:layout_editor_absoluteX="16dp"
+            tools:layout_editor_absoluteY="498dp" />
+
+        <EditText
+            android:layout_width="298dp"
+            android:layout_height="49dp"
+            android:layout_margin="4dp"
+            android:gravity="center"
+            android:hint="Descripción de anuncio"
+            tools:layout_editor_absoluteX="16dp"
+            tools:layout_editor_absoluteY="498dp" />
+
+        <EditText
+            android:layout_width="297dp"
+            android:layout_height="49dp"
+            android:layout_margin="4dp"
+            android:gravity="center"
+            android:hint="Edad de mascota"
+            tools:layout_editor_absoluteX="16dp"
+            tools:layout_editor_absoluteY="498dp" />
+
+        <EditText
+            android:layout_width="296dp"
+            android:layout_height="49dp"
+            android:layout_margin="4dp"
+            android:gravity="center"
+            android:hint="Lugar"
+            tools:layout_editor_absoluteX="16dp"
+            tools:layout_editor_absoluteY="498dp" />
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:orientation="horizontal">
+            <Button
+                android:id="@+id/log_btn_atras"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="26dp"
+                android:layout_weight="1"
+                android:text="Atrás"
+                android:hint="@string/reg_btn_atras"
+                android:textAllCaps="false" />
+
+            <Button
+                android:id="@+id/reg_btn_registro"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="26dp"
+                android:layout_weight="1"
+                android:text="Guardar"
+                android:hint="@string/reg_btn_registrar"
+                android:textAllCaps="false" />
+        </LinearLayout>
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
