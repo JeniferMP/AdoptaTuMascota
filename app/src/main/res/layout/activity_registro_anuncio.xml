@@ -22,6 +22,11 @@
             android:hint="Registrar Anuncio"
             android:textSize="30sp" />
 
+        <Spinner
+            android:id="@+id/spinner_especie"
+            android:layout_width="match_parent"
+            android:layout_height="60dp" />
+
 
         <EditText
             android:layout_width="301dp"
@@ -31,6 +36,7 @@
             android:layout_marginRight="50dp"
             android:gravity="center"
             android:hint="Nombre"
+            android:maxLength="30"
             tools:layout_editor_absoluteX="16dp"
             tools:layout_editor_absoluteY="498dp" />
 
@@ -40,6 +46,7 @@
             android:layout_margin="4dp"
             android:gravity="center"
             android:hint="Raza"
+            android:maxLength="30"
             tools:layout_editor_absoluteX="16dp"
             tools:layout_editor_absoluteY="498dp" />
 
@@ -49,6 +56,7 @@
             android:layout_margin="4dp"
             android:gravity="center"
             android:hint="Descripción de anuncio"
+            android:maxLength="100"
             tools:layout_editor_absoluteX="16dp"
             tools:layout_editor_absoluteY="498dp" />
 
@@ -58,17 +66,19 @@
             android:layout_margin="4dp"
             android:gravity="center"
             android:hint="Edad de mascota"
+            android:maxLength="30"
             tools:layout_editor_absoluteX="16dp"
             tools:layout_editor_absoluteY="498dp" />
 
-        <EditText
-            android:layout_width="296dp"
-            android:layout_height="49dp"
-            android:layout_margin="4dp"
-            android:gravity="center"
-            android:hint="Lugar"
-            tools:layout_editor_absoluteX="16dp"
-            tools:layout_editor_absoluteY="498dp" />
+        <Spinner
+            android:id="@+id/spinner_provincia"
+            android:layout_width="match_parent"
+            android:layout_height="60dp" />
+
+        <Spinner
+            android:id="@+id/spinner_distrito"
+            android:layout_width="match_parent"
+            android:layout_height="60dp" />
 
 
 
