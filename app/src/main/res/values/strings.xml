@@ -8,22 +8,4 @@
     <string name="button">Button</string>
     <string name="reg_btn_atras">Atras</string>
     <string name="reg_btn_registrar">Registro</string>
-
-    <string-array name="provincias">
-        <item>Lima</item>
-        <item>Lima1</item>
-        <item>Lima2</item>
-    </string-array>
-
-    <string-array name="distritos">
-        <item>Distrito1</item>
-        <item>Distrito2</item>
-        <item>Distrito3</item>
-    </string-array>
-
-    <string-array name="especies">
-        <item>Gatos</item>
-        <item>Perros</item>
-        <item>Pajaros</item>
-    </string-array>
 </resources>
