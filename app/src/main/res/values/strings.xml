@@ -22,6 +22,8 @@
     <string name="menu_slideshow">Slideshow</string>
 
     <string name="reg_Tipo_Usuario">Tipo Usuario</string>
+    <string name="recordar">Recordar</string>
+    <string name="todo">TODO</string>
     <string-array name="dlangs">
         <item>usuario</item>
         <item>usuario2</item>
