@@ -17,23 +17,30 @@
         android:layout_marginBottom="0dp">
 
         <ImageView
-            android:layout_width="240dp"
-            android:layout_height="226dp"
+            android:layout_width="266dp"
+            android:layout_height="255dp"
             android:layout_gravity="center"
-            android:background="@drawable/portada" />
+            android:background="@drawable/portada"
+            android:contentDescription="@string/todo" />
 
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
+
             <EditText
                 android:id="@+id/login_txt_usuario"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_marginTop="10dp"
-                android:background="#bdc3c7"
+                android:background="#BCD6E8"
+                android:fontFamily="serif-monospace"
                 android:hint="@string/login_txt_usuario"
                 android:inputType="textEmailAddress"
-                android:maxLength="60"/>
+                android:maxLength="60"
+                android:textAlignment="center"
+                android:textColor="#DDDCDC"
+                android:textColorHint="#455A64"
+                android:autofillHints="" />
         </com.google.android.material.textfield.TextInputLayout>
 
 
@@ -41,15 +48,20 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:passwordToggleEnabled="true">
+
             <EditText
                 android:id="@+id/login_txt_contrasenia"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_marginTop="10dp"
-                android:background="#bdc3c7"
+                android:autofillHints=""
+                android:background="#BCD6E8"
+                android:fontFamily="serif-monospace"
                 android:hint="@string/login_txt_contrasenia"
                 android:inputType="textPassword"
-                android:maxLength="20"/>
+                android:maxLength="20"
+                android:textAlignment="center"
+                android:textColorHint="#455A64" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <CheckBox
@@ -57,22 +69,30 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:text="Recordar"/>
+            android:fontFamily="@font/allerta"
+            android:minHeight="48dp"
+            android:text="@string/recordar"
+            android:textColor="#403838"
+            android:textSize="16sp" />
 
         <Button
             android:id="@+id/login_btn_ingresar"
             android:layout_width="176dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
+            android:background="#2586CB"
             android:text="@string/login_btn_ingresar"
-            android:textAllCaps="false" />
+            android:textAllCaps="false"
+            android:textColor="#FFFFFF" />
 
         <TextView
             android:id="@+id/login_lbl_registrate"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
+            android:fontFamily="@font/allerta"
             android:text="@string/login_lbl_registrate"
+            android:textColor="#616161"
             tools:layout_editor_absoluteX="3dp"
             tools:layout_editor_absoluteY="542dp" />
     </LinearLayout>
