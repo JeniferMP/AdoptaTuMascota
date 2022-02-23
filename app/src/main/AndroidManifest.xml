@@ -12,6 +12,11 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AdoptaTuMascota">
         <activity
+            android:name=".MenuAdoptanteActivity"
+            android:exported="false"
+            android:label="@string/title_activity_menu_adoptante"
+            android:theme="@style/Theme.AdoptaTuMascota.NoActionBar" />
+        <activity
             android:name=".PrincipalActivity"
             android:exported="false" />
         <activity
@@ -28,6 +33,10 @@
             android:exported="false" />
         <activity
             android:name=".RegistroActivity"
+            android:exported="true" />
+
+        <activity
+            android:name=".RegistroAnuncioActivity"
             android:exported="true" />
     </application>
 
