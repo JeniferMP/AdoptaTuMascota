@@ -32,6 +32,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_marginTop="10dp"
+                android:autofillHints=""
                 android:background="#BCD6E8"
                 android:fontFamily="serif-monospace"
                 android:hint="@string/login_txt_usuario"
@@ -39,8 +40,7 @@
                 android:maxLength="60"
                 android:textAlignment="center"
                 android:textColor="#DDDCDC"
-                android:textColorHint="#455A64"
-                android:autofillHints="" />
+                android:textColorHint="#455A64" />
         </com.google.android.material.textfield.TextInputLayout>
 
 
@@ -83,7 +83,8 @@
             android:background="#2586CB"
             android:text="@string/login_btn_ingresar"
             android:textAllCaps="false"
-            android:textColor="#FFFFFF" />
+            android:textColor="#FFFFFF"
+            android:textSize="20sp" />
 
         <TextView
             android:id="@+id/login_lbl_registrate"
@@ -92,7 +93,9 @@
             android:layout_marginTop="20dp"
             android:fontFamily="@font/allerta"
             android:text="@string/login_lbl_registrate"
+            android:textAlignment="center"
             android:textColor="#616161"
+            android:textSize="16sp"
             tools:layout_editor_absoluteX="3dp"
             tools:layout_editor_absoluteY="542dp" />
     </LinearLayout>
