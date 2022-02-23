@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:id="@+id/scrollView"
     tools:context=".RegistroActivity"
     android:background="@drawable/fondito">
 
@@ -11,7 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginLeft="50dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="60dp"
         android:layout_marginRight="50dp"
         android:layout_marginBottom="35dp"
         android:orientation="vertical">
@@ -29,8 +30,11 @@
         <Spinner
             android:id="@+id/sp_cbo_tipo_usuario"
             android:layout_width="match_parent"
-            android:layout_height="40dp"
+            android:layout_height="60dp"
             android:layout_marginTop="15dp"
+            android:gravity="center"
+            android:background="#ffe4e1"
+            android:padding="15dp"
             android:entries="@array/dlangs"
             android:prompt="@string/reg_Tipo_Usuario" />
 
@@ -143,7 +147,6 @@
                 android:id="@+id/reg_btn_atras"
                 android:layout_width="350dp"
                 android:layout_height="70dp"
-
                 android:layout_weight="1"
                 android:text="Atras"
                 android:textSize="20dp"
@@ -151,11 +154,9 @@
                 app:backgroundTint="#ef9a9a" />
 
             <Button
-
                 android:id="@+id/reg_btn_registro"
                 android:layout_width="350dp"
                 android:layout_height="70dp"
-
                 android:layout_weight="1"
                 android:text="Registrar"
                 android:textAllCaps="false"
