@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".RegistroActivity">
+    tools:context=".RegistroActivity"
+    android:background="@drawable/fondito">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="40dp"
         android:layout_marginLeft="50dp"
+        android:layout_marginTop="40dp"
         android:layout_marginRight="50dp"
         android:layout_marginBottom="35dp"
         android:orientation="vertical">
@@ -18,137 +19,124 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="35dp"
             android:gravity="center"
-            android:text="Registrar Usuarios"
-            android:textStyle="italic"
+            android:text="Registrar Usuario"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:textColor="@android:color/holo_purple"
-            android:textSize="30sp" />
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="left"
-            android:layout_gravity="left"
-            android:text="Tipo de Usuario"
-            android:textStyle="bold"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:textColor="@android:color/holo_red_dark"
-            android:textSize="20sp"
-            android:layout_margin="3dp"/>
+            android:textSize="30sp"
+            android:textStyle="bold"/>
+
         <Spinner
             android:id="@+id/sp_cbo_tipo_usuario"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="40dp"
+            android:layout_marginTop="15dp"
             android:entries="@array/dlangs"
-            android:layout_margin="1dp"
-            android:prompt="@string/reg_Tipo_Usuario"/>
+            android:prompt="@string/reg_Tipo_Usuario" />
 
 
         <EditText
             android:id="@+id/reg_lbl_nombre"
-            android:layout_width="210dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center"
             android:layout_gravity="center_horizontal"
+            android:gravity="center"
             android:hint="Nombre"
-            android:padding="10dp"
+            android:padding="15dp"
             android:textColor="@android:color/holo_blue_bright"
-            tools:layout_editor_absoluteX="16dp"
-            tools:layout_editor_absoluteY="498dp"/>
+        android:layout_marginTop="10dp"/>
         <EditText
             android:id="@+id/reg_lbl_apellido"
-            android:layout_width="210dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center"
             android:layout_gravity="center_horizontal"
+            android:gravity="center"
             android:hint="Apellidos"
-            android:padding="10dp"
-            android:textColor="@android:color/holo_blue_bright"
-            tools:layout_editor_absoluteX="16dp"
-            tools:layout_editor_absoluteY="498dp"/>
+            android:padding="15dp"
+            android:textColor="@android:color/holo_blue_bright" />
+
         <EditText
             android:id="@+id/reg_lbl_direccion"
-            android:layout_width="210dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center"
             android:layout_gravity="center_horizontal"
+            android:gravity="center"
             android:hint="Dirección"
-            android:padding="10dp"
-            android:textColor="@android:color/holo_blue_bright"
-            tools:layout_editor_absoluteX="16dp"
-            tools:layout_editor_absoluteY="498dp"/>
+            android:padding="15dp"
+            android:textColor="@android:color/holo_blue_bright" />
+
         <EditText
             android:id="@+id/reg_lbl_telefono"
-            android:layout_width="210dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center"
             android:layout_gravity="center_horizontal"
-            android:inputType="phone"
+            android:gravity="center"
             android:hint="Teléfono"
-            android:padding="10dp"
-            android:textColor="@android:color/holo_blue_bright"
-            tools:layout_editor_absoluteX="16dp"
-            tools:layout_editor_absoluteY="498dp"/>
+            android:inputType="phone"
+            android:padding="15dp"
+            android:textColor="@android:color/holo_blue_bright" />
+
         <EditText
             android:id="@+id/reg_lbl_correo"
-            android:layout_width="210dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center"
             android:layout_gravity="center_horizontal"
-            android:inputType="textEmailAddress"
+            android:gravity="center"
             android:hint="Correo"
-            android:padding="10dp"
-            android:textColor="@android:color/holo_blue_bright"
-            tools:layout_editor_absoluteX="16dp"
-            tools:layout_editor_absoluteY="498dp"/>
+            android:inputType="textEmailAddress"
+            android:padding="15dp"
+            android:textColor="@android:color/holo_blue_bright" />
+
         <EditText
             android:id="@+id/reg_lbl_contraseña"
-            android:layout_width="210dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center"
             android:layout_gravity="center_horizontal"
-            android:inputType="textPassword"
+            android:gravity="center"
             android:hint="Contraseña"
-            android:padding="10dp"
-            android:textColor="@android:color/holo_blue_bright"
-            tools:layout_editor_absoluteX="16dp"
-            tools:layout_editor_absoluteY="498dp"/>
+            android:inputType="textPassword"
+            android:padding="15dp"
+            android:textColor="@android:color/holo_blue_bright" />
+
         <EditText
             android:id="@+id/reg_lbl_confcontraseña"
-            android:layout_width="210dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center"
             android:layout_gravity="center_horizontal"
-            android:inputType="textPassword"
+            android:gravity="center"
             android:hint="Conf. Contraseña"
-            android:padding="10dp"
-            android:textColor="@android:color/holo_blue_bright"
-            tools:layout_editor_absoluteX="16dp"
-            tools:layout_editor_absoluteY="498dp"/>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="35dp"
-        android:orientation="horizontal">
-        <Button
-            android:id="@+id/reg_btn_atras"
+            android:inputType="textPassword"
+            android:padding="15dp"
+            android:textColor="@android:color/holo_blue_bright" />
+
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginRight="26dp"
-            android:layout_weight="1"
-            android:text="Atras"
-            android:textAllCaps="false" />
-        <Button
-            android:id="@+id/reg_btn_registro"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginRight="26dp"
-            android:layout_weight="1"
-            android:text="Registrar"
-            android:textAllCaps="false" />
-    </LinearLayout>
+            android:layout_margin="35dp"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/reg_btn_atras"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="26dp"
+                android:layout_weight="1"
+                android:text="Atras"
+                android:textAllCaps="false"
+                app:backgroundTint="#ef9a9a" />
+
+            <Button
+
+                android:id="@+id/reg_btn_registro"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="26dp"
+                android:layout_weight="1"
+                android:text="Registrar"
+                android:textAllCaps="false"
+                app:backgroundTint="#ef9a9a" />
+        </LinearLayout>
     </LinearLayout>
 
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</RelativeLayout>
