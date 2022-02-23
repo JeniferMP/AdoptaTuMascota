@@ -25,8 +25,24 @@
     <string-array name="dlangs">
         <item>usuario</item>
         <item>usuario2</item>
+    </string-array>
 
+    <string-array name="provincias">
+        <item>prov1</item>
+        <item>prov2</item>
+        <item>prov3</item>
+    </string-array>
 
+    <string-array name="distritos">
+        <item>dist1</item>
+        <item>dist2</item>
+        <item>dist3</item>
+    </string-array>
+
+    <string-array name="especies">
+        <item>espec1</item>
+        <item>espec2</item>
+        <item>espec3</item>
     </string-array>
 
 </resources>
