@@ -8,4 +8,12 @@
     <string name="button">Button</string>
     <string name="reg_btn_atras">Atras</string>
     <string name="reg_btn_registrar">Registro</string>
+    <string name="reg_Tipo_Usuario">Tipo Usuario</string>
+    <string-array name="dlangs">
+        <item>usuario</item>
+        <item>usuario2</item>
+
+
+    </string-array>
+
 </resources>
