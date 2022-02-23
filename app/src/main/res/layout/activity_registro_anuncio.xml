@@ -3,6 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".RegistroAnuncioActivity">
 
     <LinearLayout
@@ -12,7 +13,8 @@
         android:layout_marginLeft="50dp"
         android:layout_marginRight="50dp"
         android:layout_marginBottom="20dp"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:background="#B6D9E8">
 
         <TextView
             android:layout_width="match_parent"
@@ -20,16 +22,18 @@
             android:layout_margin="35dp"
             android:gravity="center_vertical"
             android:hint="Registrar Anuncio"
-            android:textSize="30sp" />
+            android:textSize="27sp"
+            android:fontFamily="serif"/>
 
         <Spinner
             android:id="@+id/spinner_especie"
             android:layout_width="match_parent"
-            android:layout_height="60dp" />
+            android:layout_height="60dp"
+            />
 
 
         <EditText
-            android:layout_width="301dp"
+            android:layout_width="295dp"
             android:layout_height="49dp"
             android:layout_margin="4dp"
             android:layout_marginLeft="50dp"
@@ -38,39 +42,45 @@
             android:hint="Nombre"
             android:maxLength="30"
             android:inputType="text"
+            android:drawableLeft="@drawable/ic_action_nombrepet"
+            android:background="@drawable/custom_input"
             tools:layout_editor_absoluteX="16dp"
             tools:layout_editor_absoluteY="498dp" />
 
         <EditText
-            android:layout_width="301dp"
+            android:layout_width="295dp"
             android:layout_height="49dp"
             android:layout_margin="4dp"
             android:gravity="center"
             android:hint="Raza"
             android:maxLength="30"
             android:inputType="text"
+            android:background="@drawable/custom_input"
             tools:layout_editor_absoluteX="16dp"
             tools:layout_editor_absoluteY="498dp" />
 
         <EditText
-            android:layout_width="298dp"
+            android:layout_width="295dp"
             android:layout_height="49dp"
             android:layout_margin="4dp"
             android:gravity="center"
             android:hint="Descripción de anuncio"
             android:maxLength="100"
             android:inputType="text"
+            android:drawableLeft="@drawable/ic_action_descripcion"
+            android:background="@drawable/custom_input"
             tools:layout_editor_absoluteX="16dp"
             tools:layout_editor_absoluteY="498dp" />
 
         <EditText
-            android:layout_width="297dp"
+            android:layout_width="295dp"
             android:layout_height="49dp"
             android:layout_margin="4dp"
             android:gravity="center"
             android:hint="Edad de mascota"
             android:maxLength="30"
             android:inputType="text"
+            android:background="@drawable/custom_input"
             tools:layout_editor_absoluteX="16dp"
             tools:layout_editor_absoluteY="498dp" />
 
@@ -99,7 +109,10 @@
                 android:layout_weight="1"
                 android:text="Atrás"
                 android:hint="@string/reg_btn_atras"
-                android:textAllCaps="false" />
+                android:textAllCaps="false"
+                android:backgroundTint="#E9EDEF"
+                android:drawableLeft="@drawable/ic_action_buttonatras"
+                app:cornerRadius="20dp"/>
 
             <Button
                 android:id="@+id/reg_btn_registro"
@@ -107,9 +120,12 @@
                 android:layout_height="wrap_content"
                 android:layout_marginRight="26dp"
                 android:layout_weight="1"
-                android:text="Guardar"
+                android:backgroundTint="#E9EDEF"
+                android:drawableRight="@drawable/ic_action_buttoguardar"
                 android:hint="@string/reg_btn_registrar"
-                android:textAllCaps="false" />
+                android:text="Guardar"
+                android:textAllCaps="false"
+                app:cornerRadius="20dp" />
         </LinearLayout>
     </LinearLayout>
 
