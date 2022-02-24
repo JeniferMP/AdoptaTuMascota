@@ -25,16 +25,22 @@ public class RegistroAnuncioActivity extends AppCompatActivity implements View.O
 
         cbo_especie=findViewById(R.id.crear_anuncio_spinner_especie);
         cbo_distrito=findViewById(R.id.crear_anuncio_spinner_distrito);
-        cbo_provincia=findViewById(R.id.crear_anuncio_spinner_distrito);
+        cbo_provincia=findViewById(R.id.crear_anuncio_spinner_provincia);
         txt_nombre=findViewById(R.id.crear_anuncio_txt_nombre);
         txt_raza=findViewById(R.id.crear_anuncio_txt_raza);
         txt_descripcion=findViewById(R.id.crear_anuncio_txt_descripcion);
         txt_edad=findViewById(R.id.crear_anuncio_txt_edad);
         btn_guardar=findViewById(R.id.crear_anuncio_btn_guardar);
         btn_atras=findViewById(R.id.crear_anuncio_btn_atras);
+
         btn_guardar.setOnClickListener(this);
+
+        cbo_especie.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item,
+                new String[]{"Seleccione especie", "Perro", "Gato", "Caballo"}));
+
         cbo_provincia.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item,
                 new String[]{"Seleccione provincia", "Cajamarca", "La Libertad", "Lima"}));
+
         cbo_distrito.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item,
                 new String[]{"Seleccione distrito", "Florencia de Mora", "Trujillo", "El Porvenir"}));
 
