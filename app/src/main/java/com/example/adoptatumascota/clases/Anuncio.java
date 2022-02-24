@@ -10,13 +10,19 @@ public class Anuncio {
     private String Provincia;
     private String Distrito;
     private String Imagen;
+    private String Anunciante;
+    private String Direccion;
+    private String Telefono;
+    private String fecha;
+
+
 
     public Anuncio(){
 
     }
 
     public Anuncio( int id,String especie, String nombre, String raza, String descripcion, String edad,String provincia,
-                    String distrito, String Imagen){
+                    String distrito, String imagen, String anunciante, String direccion, String fecha, String telefono){
         this.setId(id);
         setEspecie(especie);
         setNombre(nombre);
@@ -25,7 +31,11 @@ public class Anuncio {
         setEdad(edad);
         setProvincia(provincia);
         setDistrito(distrito);
-
+        setImagen(imagen);
+        setAnunciante(anunciante);
+        setDireccion(direccion);
+        setTelefono(telefono);
+        setFecha(fecha);
     }
 
 
@@ -99,5 +109,36 @@ public class Anuncio {
 
     public void setImagen(String imagen) {
         Imagen = imagen;
+    }
+
+    public String getAnunciante() {
+        return Anunciante;
+    }
+
+    public void setAnunciante(String anunciante) {
+        Anunciante = anunciante;
+    }
+
+    public String getDireccion() {
+        return Direccion;
+    }
+
+    public void setDireccion(String direccion) {
+        Direccion = direccion;
+    }
+
+    public String getTelefono() {
+        return Telefono;
+    }
+
+    public void setTelefono(String telefono) {
+        Telefono = telefono;
+    }
+    public String getFecha() {
+        return fecha;
+    }
+
+    public void setFecha(String fecha) {
+        this.fecha = fecha;
     }
 }

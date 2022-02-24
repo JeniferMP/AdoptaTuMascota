@@ -3,23 +3,27 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@+id/nav_home">
+    app:startDestination="@id/anunciosFragment">
 
     <fragment
-        android:id="@+id/nav_home"
-        android:name="com.example.adoptatumascota.ui.home.HomeFragment"
-        android:label="@string/menu_home"
-        tools:layout="@layout/fragment_home" />
-
+        android:id="@+id/anunciosFragment"
+        android:name="com.example.adoptatumascota.nav.AnunciosFragment"
+        android:label="Anuncios"
+        tools:layout="@layout/fragment_anuncios" />
     <fragment
-        android:id="@+id/nav_gallery"
-        android:name="com.example.adoptatumascota.ui.gallery.GalleryFragment"
-        android:label="@string/menu_gallery"
-        tools:layout="@layout/fragment_gallery" />
-
+        android:id="@+id/misAnunciosFragment"
+        android:name="com.example.adoptatumascota.nav.MisAnunciosFragment"
+        android:label="Mis Anuncios"
+        tools:layout="@layout/fragment_mis_anuncios" />
     <fragment
-        android:id="@+id/nav_slideshow"
-        android:name="com.example.adoptatumascota.ui.slideshow.SlideshowFragment"
-        android:label="@string/menu_slideshow"
-        tools:layout="@layout/fragment_slideshow" />
+        android:id="@+id/agregarAnuncioFragment"
+        android:name="com.example.adoptatumascota.nav.AgregarAnuncioFragment"
+        android:label="Agregar Anuncio"
+        tools:layout="@layout/fragment_agregar_anuncio" />
+    <fragment
+        android:id="@+id/cerrarSesionFragment"
+        android:name="com.example.adoptatumascota.nav.CerrarSesionFragment"
+        android:label="Cerrar Sesión"
+        tools:layout="@layout/fragment_cerrar_sesion" />
+
 </navigation>

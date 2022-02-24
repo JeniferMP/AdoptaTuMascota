@@ -3,4 +3,165 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/iv_item_anuncio"
+            android:layout_width="match_parent"
+            android:layout_height="90dp"
+            android:src="@mipmap/ic_launcher"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="80dp"
+                android:layout_height="50dp"
+                android:src="@drawable/usuario"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:gravity="center_vertical"
+                android:text="@string/item_lbl_anunciante"
+                android:textColor="#000"
+                android:textSize="20sp"
+                android:textStyle="bold"/>
+        </LinearLayout>
+        <TextView
+            android:id="@+id/item_lbl_anunciante"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="80dp"
+            android:textSize="18sp"/>
+
+
+
+        <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="80dp"
+            android:layout_height="50dp"
+            android:src="@drawable/ubicacion"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:gravity="center_vertical"
+            android:text="@string/item_lbl_direccion"
+            android:textColor="#000"
+            android:textSize="20sp"
+            android:textStyle="bold"/>
+        </LinearLayout>
+        <TextView
+            android:id="@+id/item_lbl_direccion"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="80dp"
+            android:textSize="18sp"/>
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="80dp"
+                android:layout_height="50dp"
+                android:src="@drawable/descripcion"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:gravity="center_vertical"
+                android:text="@string/item_lbl_descripcion"
+                android:textColor="#000"
+                android:textSize="20sp"
+                android:textStyle="bold"/>
+        </LinearLayout>
+        <TextView
+            android:id="@+id/item_lbl_descripcion"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="80dp"
+            android:textSize="18sp"/>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="80dp"
+                android:layout_height="50dp"
+                android:src="@drawable/telefono"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:gravity="center_vertical"
+                android:text="@string/item_lbl_telefono"
+                android:textColor="#000"
+                android:textSize="20sp"
+                android:textStyle="bold"/>
+        </LinearLayout>
+        <TextView
+            android:id="@+id/item_lbl_telefono"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="80dp"
+            android:textSize="18sp"/>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="80dp"
+                android:layout_height="50dp"
+                android:src="@drawable/calendario"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:gravity="center_vertical"
+                android:text="@string/item_lbl_fecha"
+                android:textColor="#000"
+                android:textSize="20sp"
+                android:textStyle="bold"/>
+        </LinearLayout>
+        <TextView
+            android:id="@+id/item_lbl_fecha"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="80dp"
+            android:textSize="18sp"/>
+
+        <Button
+            android:id="@+id/item_btn_ver_mas"
+            android:layout_width="214dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="#2586CB"
+            android:text="@string/item_btn_ver_mas"
+            android:textAllCaps="false"
+            android:textColor="#FFFFFF"
+            android:textSize="23sp" />
+
+
+    </LinearLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

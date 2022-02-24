@@ -4,22 +4,22 @@
     tools:showIn="navigation_view">
 
     <group android:checkableBehavior="single">
-        <item
-            android:id="@+id/nav_home"
-            android:icon="@drawable/ic_menu_camera"
-            android:title="@string/menu_home" />
-        <item
-            android:id="@+id/nav_gallery"
-            android:icon="@drawable/ic_menu_gallery"
-            android:title="@string/menu_gallery" />
-        <item
-            android:id="@+id/nav_slideshow"
-            android:icon="@drawable/ic_menu_slideshow"
-            android:title="@string/menu_slideshow" />
 
         <item
-            android:id="@+id/nav_add"
-            android:icon="@drawable/ic_menu_slideshow"
-            android:title="Publicar anuncio" />
+            android:id="@+id/anunciosFragment"
+            android:icon="@drawable/anuncios_ic"
+            android:title="Anuncios" />
+        <item
+            android:id="@+id/misAnunciosFragment"
+            android:icon="@drawable/mis_anuncios_ic"
+            android:title="Mis Anuncios" />
+        <item
+            android:id="@+id/agregarAnuncioFragment"
+            android:icon="@drawable/agregar_ic"
+            android:title="Añadir Anuncio" />
+        <item
+            android:id="@+id/cerrarSesionFragment"
+            android:icon="@drawable/login_ic"
+            android:title="Cerrar Sesión" />
     </group>
 </menu>
