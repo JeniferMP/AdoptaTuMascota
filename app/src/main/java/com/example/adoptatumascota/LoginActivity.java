@@ -11,6 +11,9 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.adoptatumascota.SQLite.Sesion;
+import com.example.adoptatumascota.clases.Hash;
+
 public class LoginActivity extends AppCompatActivity implements View.OnClickListener {
     EditText txt_usuario, txt_contrasenia;
     Button btn_ingresar;
@@ -28,13 +31,22 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
         btn_ingresar.setOnClickListener(this);
         lbl_registro.setOnClickListener(this);
+        validar_si_recordo_sesion();
+    }
+
+    private void validar_si_recordo_sesion() {
+        Sesion sesion= new Sesion(getApplicationContext());
+        if(sesion.recordo_sesion()){
+            iniciar_sesion(sesion.extraer_usuario("correo"),
+                    sesion.extraer_usuario("clave"),true);
+        }
     }
 
     @Override
     public void onClick(View view) {
         switch (view.getId()){
             case R.id.login_btn_ingresar:
-                iniciar_sesion(txt_usuario.getText().toString().trim(), txt_contrasenia.getText().toString().trim());
+                iniciar_sesion(txt_usuario.getText().toString().trim(), txt_contrasenia.getText().toString().trim(),false);
                 break;
             case R.id.login_lbl_registrate:
                 registrar_usuario();
@@ -43,10 +55,19 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     }
 
 
-    private void iniciar_sesion(String usuario, String contrasenia) {
-        if (chk_recordar.isChecked())
-            Toast.makeText(this,"Recordó sesión",Toast.LENGTH_SHORT).show();
-        if (usuario.equals("Adoptante")&& contrasenia.equals("12345678")){
+    private void iniciar_sesion(String usuario, String contrasenia, boolean b_recordo) {
+
+        Hash hash= new Hash();
+        contrasenia= (b_recordo==true? contrasenia:hash.StringToHash(contrasenia, "SHA1"));
+
+        if (usuario.equals("Adoptante")&& contrasenia.equals("7c222fb2927d828af22f592134e8932480637c0d")){
+            if (chk_recordar.isChecked()){
+                Sesion sesion= new Sesion(getApplicationContext());
+                sesion.agregar_usuario(1,usuario, contrasenia );
+
+                Toast.makeText(this,"Recordó sesión",Toast.LENGTH_SHORT).show();
+            }
+
             Intent i_principal= new Intent(this, MenuAdoptanteActivity.class);
             startActivity(i_principal);
             finish();

@@ -1,5 +1,6 @@
 package com.example.adoptatumascota.nav;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -7,16 +8,21 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.EditText;
 
+import com.example.adoptatumascota.LoginActivity;
 import com.example.adoptatumascota.R;
+import com.example.adoptatumascota.SQLite.Sesion;
 
 /**
  * A simple {@link Fragment} subclass.
  * Use the {@link CerrarSesionFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class CerrarSesionFragment extends Fragment {
-
+public class CerrarSesionFragment extends Fragment implements View.OnClickListener{
+    EditText txt_correo, txt_clave;
+    Button btn_cerrarSesion;
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -61,6 +67,34 @@ public class CerrarSesionFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_cerrar_sesion, container, false);
+        View v_cerrar= inflater.inflate(R.layout.fragment_cerrar_sesion, container, false);
+        txt_correo= v_cerrar.findViewById(R.id.cerrar_txt_usuario);
+        txt_clave= v_cerrar.findViewById(R.id.cerrar_txt_contrasenia);
+        btn_cerrarSesion= v_cerrar.findViewById(R.id.cerrar_btn_Salir);
+
+        btn_cerrarSesion.setOnClickListener(this);
+        return v_cerrar;
+    }
+
+    @Override
+    public void onClick(View view) {
+        switch (view.getId()){
+            case R.id.cerrar_btn_Salir:
+                cerrar_sesion();
+                break;
+        }
+
+    }
+
+    private void cerrar_sesion() {
+        Sesion sesion= new Sesion(getContext());
+        sesion.eliminar_usuario(1);
+
+        //destruir historial
+        getActivity().finish();
+
+        //cargar actividad Login
+        Intent i_login= new Intent(getContext(), LoginActivity.class);
+        startActivity(i_login);
     }
 }

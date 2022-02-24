@@ -39,7 +39,7 @@
                 android:inputType="textEmailAddress"
                 android:maxLength="60"
                 android:textAlignment="center"
-                android:textColor="#DDDCDC"
+                android:textColor="#112255"
                 android:textColorHint="#455A64" />
         </com.google.android.material.textfield.TextInputLayout>
 
