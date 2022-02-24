@@ -39,7 +39,7 @@ Button btn_atras, btn_registrar;
     private void elegir_usuario() {
 
    tipo_usuario.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item,
-           new String[]{"--Elegir usuario--"}));
+           new String[]{"--Elegir usuario--", "Adoptante", "Protector"}));
    String s_url="https://adoptatumascota-upn.atwebpages.com/ws/tipousuario.php";
 
     }
