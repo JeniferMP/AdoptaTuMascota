@@ -1,8 +1,10 @@
 package com.example.adoptatumascota;
 
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.Menu;
+import android.widget.EditText;
 
 import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.navigation.NavigationView;
@@ -18,6 +20,8 @@ import com.example.adoptatumascota.databinding.ActivityMenuAdoptanteBinding;
 
 public class MenuAdoptanteActivity extends AppCompatActivity {
 
+    EditText txtprueba;
+
     private AppBarConfiguration mAppBarConfiguration;
     private ActivityMenuAdoptanteBinding binding;
 
@@ -28,14 +32,10 @@ public class MenuAdoptanteActivity extends AppCompatActivity {
         binding = ActivityMenuAdoptanteBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
+        String prueba= "Protector";
+        String usuario= getIntent().getStringExtra("usuario");
         setSupportActionBar(binding.appBarMenuAdoptante.toolbar);
-        binding.appBarMenuAdoptante.fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
+
         DrawerLayout drawer = binding.drawerLayout;
         NavigationView navigationView = binding.navView;
         // Passing each menu ID as a set of Ids because each
@@ -47,14 +47,21 @@ public class MenuAdoptanteActivity extends AppCompatActivity {
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_menu_adoptante);
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);
+
+        isAdoptante(navigationView,prueba);
+
+    }
+    public void isAdoptante(NavigationView navigationView, String usuario){
+        if (usuario =="Adoptante"){
+            Menu menuNav= navigationView.getMenu();
+            MenuItem nav_item2 = menuNav.findItem(R.id.agregarAnuncioFragment);
+            MenuItem nav_item3 = menuNav.findItem(R.id.misAnunciosFragment);
+            nav_item2.setVisible(false);
+            nav_item3.setVisible(false);
+        }
+
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_adoptante, menu);
-        return true;
-    }
 
     @Override
     public boolean onSupportNavigateUp() {

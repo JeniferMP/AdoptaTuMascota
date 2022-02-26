@@ -38,6 +38,7 @@
                 android:hint="@string/login_txt_usuario"
                 android:inputType="textEmailAddress"
                 android:maxLength="60"
+                android:textSize="20dp"
                 android:textAlignment="center"
                 android:textColor="#112255"
                 android:textColorHint="#455A64" />

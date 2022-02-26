@@ -69,7 +69,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             }
 
             Intent i_principal= new Intent(this, MenuAdoptanteActivity.class);
-            i_principal.putExtra("usuario",usuario); //nombre del argumento, valor
+            i_principal.putExtra("usuario",usuario);//nombre del argumento, valor
             startActivity(i_principal);
             finish();
         }else {
