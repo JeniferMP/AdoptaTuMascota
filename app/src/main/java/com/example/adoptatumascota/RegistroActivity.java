@@ -14,7 +14,7 @@ import android.widget.Toast;
 
 public class RegistroActivity extends AppCompatActivity implements View.OnClickListener{
 EditText txt_nombre, txt_apellidos, txt_direccion, txt_telefono, txt_correo, txt_contaseña, txt_confcontraseña;
-Spinner tipo_usuario;
+Spinner cbo_tipo_usuario;
 Button btn_atras, btn_registrar;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,7 +29,7 @@ Button btn_atras, btn_registrar;
         txt_confcontraseña =findViewById(R.id.reg_lbl_confcontraseña);
         btn_atras=findViewById(R.id.reg_btn_atras);
         btn_registrar=findViewById(R.id.reg_btn_registro);
-        tipo_usuario=findViewById(R.id.sp_cbo_tipo_usuario);
+        cbo_tipo_usuario=findViewById(R.id.sp_cbo_tipo_usuario);
         btn_atras.setOnClickListener(this);
         btn_registrar.setOnClickListener(this);
 
@@ -38,7 +38,7 @@ Button btn_atras, btn_registrar;
 
     private void elegir_usuario() {
 
-   tipo_usuario.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item,
+   cbo_tipo_usuario.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item,
            new String[]{"--Elegir usuario--", "Adoptante", "Protector"}));
    String s_url="https://adoptatumascota-upn.atwebpages.com/ws/tipousuario.php";
 
@@ -57,15 +57,25 @@ Button btn_atras, btn_registrar;
         }
     }
     private void registrar_user() {
-  if(txt_nombre.getText().toString().isEmpty()|| txt_apellidos.getText().toString().isEmpty()||txt_direccion.getText().toString().isEmpty()
-  ||txt_telefono.getText().toString().length()<9||txt_correo.getText().toString().isEmpty()||txt_contaseña.getText().toString().isEmpty()
-  ||txt_confcontraseña.getText().toString().isEmpty()){
-      Toast.makeText(RegistroActivity.this, "rellene los datos correctamente", Toast.LENGTH_LONG).show();
-      return;
-  }
-    Intent i_bienvenida = new Intent(this, PrincipalActivity.class);
-  i_bienvenida.putExtra("nombre", txt_nombre.getText().toString());
-  startActivity(i_bienvenida);
+        if (cbo_tipo_usuario.getSelectedItemPosition() == 0 || txt_nombre.getText().toString().isEmpty() ||
+                txt_apellidos.getText().toString().isEmpty() || txt_direccion.getText().toString().isEmpty() ||
+                txt_telefono.getText().toString().isEmpty() || txt_correo.getText().toString().isEmpty() || txt_contaseña.getText().toString().isEmpty()
+                || txt_confcontraseña.getText().toString().isEmpty()) {
+            Toast.makeText(RegistroActivity.this, "Debe completar todos los campos", Toast.LENGTH_LONG).show();
+        } else {
+            if (txt_telefono.getText().toString().length() < 9) {
+                Toast.makeText(RegistroActivity.this, "El teléfono requiere mínimo 9 caracteres", Toast.LENGTH_LONG).show();
+            } else {
+                if (txt_contaseña.getText().toString().length() < 8) {
+                    Toast.makeText(RegistroActivity.this, "La contraseña requiere mínimo 8 caracteres", Toast.LENGTH_LONG).show();
+
+                }else {
+                    Toast.makeText(RegistroActivity.this, "Se registró con éxito", Toast.LENGTH_LONG).show();
+                    Intent i_login = new Intent(this, LoginActivity.class);
+                    startActivity(i_login);
+                }
+            }
+        }
     }
     private void regresar() {
         Intent i_mostrar = new Intent(getApplicationContext(),LoginActivity.class);
