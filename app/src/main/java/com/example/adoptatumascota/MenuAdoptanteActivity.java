@@ -5,10 +5,13 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.Menu;
 import android.widget.EditText;
+import android.widget.TextView;
 
+import com.example.adoptatumascota.databinding.NavHeaderMenuAdoptanteBinding;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.navigation.NavigationView;
 
+import androidx.annotation.ContentView;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
@@ -21,6 +24,7 @@ import com.example.adoptatumascota.databinding.ActivityMenuAdoptanteBinding;
 public class MenuAdoptanteActivity extends AppCompatActivity {
 
     EditText txtprueba;
+    TextView txtus, textemail;
 
     private AppBarConfiguration mAppBarConfiguration;
     private ActivityMenuAdoptanteBinding binding;
@@ -49,7 +53,7 @@ public class MenuAdoptanteActivity extends AppCompatActivity {
         NavigationUI.setupWithNavController(navigationView, navController);
 
         isAdoptante(navigationView,prueba);
-
+        llenadoUsuario(navigationView, usuario);
     }
     public void isAdoptante(NavigationView navigationView, String usuario){
         if (usuario =="Adoptante"){
@@ -59,9 +63,17 @@ public class MenuAdoptanteActivity extends AppCompatActivity {
             nav_item2.setVisible(false);
             nav_item3.setVisible(false);
         }
-
     }
 
+    public void llenadoUsuario(NavigationView navigationView, String usuario){
+        View vistaHeader = navigationView.getHeaderView(0);
+
+        TextView txt_usuario = vistaHeader.findViewById(R.id.nomusuario);
+        TextView txt_correo = vistaHeader.findViewById(R.id.textViewemail);
+
+        txt_usuario.setText(usuario);
+        txt_correo.setText(usuario);
+    }
 
     @Override
     public boolean onSupportNavigateUp() {
