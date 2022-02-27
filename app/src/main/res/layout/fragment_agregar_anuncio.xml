@@ -26,51 +26,59 @@
             android:textSize="27sp"
             android:fontFamily="serif"/>
 
+
         <Spinner
             android:id="@+id/crear_anuncio_spinner_especie"
-            android:layout_width="match_parent"
-            android:layout_marginTop="10dp"
-            android:layout_height="60dp" />
-
+            android:layout_width="300dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="10dp"
+            android:background="#e2924d"
+            android:gravity="center"
+            android:padding="15dp" />
 
         <EditText
             android:id="@+id/crear_anuncio_txt_nombre"
-            android:layout_width="295dp"
-            android:layout_height="49dp"
-            android:layout_margin="4dp"
-            android:layout_marginLeft="50dp"
-            android:layout_marginRight="50dp"
+            android:layout_width="292dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:background="@drawable/custom_input"
+            android:drawableLeft="@drawable/ic_action_nombrepet"
             android:gravity="center"
             android:hint="Nombre"
-            android:maxLength="30"
             android:inputType="text"
-            android:drawableLeft="@drawable/ic_action_nombrepet"
-            android:background="@drawable/custom_input"
+            android:maxLength="30"
+            android:padding="12dp"
             tools:layout_editor_absoluteX="16dp"
             tools:layout_editor_absoluteY="498dp" />
 
         <EditText
             android:id="@+id/crear_anuncio_txt_raza"
-            android:layout_width="295dp"
-            android:layout_height="49dp"
-            android:layout_margin="4dp"
+            android:layout_width="292dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:background="@drawable/custom_input"
             android:gravity="center"
             android:hint="Raza"
-            android:maxLength="30"
             android:inputType="text"
-            android:background="@drawable/custom_input"
+            android:maxLength="30"
+            android:padding="12dp"
+            android:layout_marginTop="10dp"
+            android:drawableLeft="@drawable/ic_action_raza"
             tools:layout_editor_absoluteX="16dp"
             tools:layout_editor_absoluteY="498dp" />
 
         <EditText
             android:id="@+id/crear_anuncio_txt_descripcion"
-            android:layout_width="295dp"
-            android:layout_height="49dp"
-            android:layout_margin="4dp"
+            android:layout_width="292dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
             android:gravity="center"
             android:hint="Descripción de anuncio"
             android:maxLength="100"
             android:inputType="text"
+            android:padding="12dp"
+            android:layout_marginTop="10dp"
             android:drawableLeft="@drawable/ic_action_descripcion"
             android:background="@drawable/custom_input"
             tools:layout_editor_absoluteX="16dp"
@@ -78,36 +86,49 @@
 
         <EditText
             android:id="@+id/crear_anuncio_txt_edad"
-            android:layout_width="295dp"
-            android:layout_height="49dp"
-            android:layout_margin="4dp"
+            android:layout_width="292dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
             android:gravity="center"
             android:hint="Edad de mascota"
             android:maxLength="30"
             android:inputType="text"
+            android:padding="12dp"
+            android:layout_marginTop="10dp"
+            android:drawableLeft="@drawable/ic_action_nombrepet"
             android:background="@drawable/custom_input"
+
             tools:layout_editor_absoluteX="16dp"
             tools:layout_editor_absoluteY="498dp" />
 
         <Spinner
             android:id="@+id/crear_anuncio_spinner_provincia"
-            android:layout_width="match_parent"
-            android:layout_height="60dp" />
+            android:layout_width="300dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="10dp"
+            android:background="#e2924d"
+            android:gravity="center"
+            android:padding="15dp" />
 
         <Spinner
             android:id="@+id/crear_anuncio_spinner_distrito"
-            android:layout_width="match_parent"
-            android:layout_height="60dp" />
+            android:layout_width="300dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="10dp"
+            android:background="#e2924d"
+            android:gravity="center"
+            android:padding="15dp" />
 
 
         <Button
             android:id="@+id/crear_anuncio_btn_guardar"
-            android:layout_width="200dp"
+            android:layout_width="120dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:layout_gravity="center"
             android:backgroundTint="#E9EDEF"
-            android:drawableRight="@drawable/ic_action_buttoguardar"
             android:hint="@string/reg_btn_registrar"
             android:text="Guardar"
             android:textAllCaps="false"
