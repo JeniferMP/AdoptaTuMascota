@@ -37,6 +37,9 @@ import org.json.JSONArray;
 import org.json.JSONException;
 
 import java.io.ByteArrayOutputStream;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 import cz.msebera.android.httpclient.Header;
 
@@ -280,15 +283,17 @@ public class AgregarAnuncioFragment extends Fragment implements View.OnClickList
             return;
 
         AsyncHttpClient ahc_anuncio= new AsyncHttpClient();
-        String s_url= "http://10.0.1.12/vetAPI/api/Distritos/listar-distritos";
+        String s_url= "http://adopta-tu-mascota.atwebpages.com/WS/agregar_anuncio.php";
         RequestParams params= new RequestParams();
         params.add("Esp_nombre", cbo_especie.getSelectedItem().toString().trim());
         params.add("Anun_nombre", txt_nombre.getText().toString().trim());
         params.add("Anun_raza", txt_nombre.getText().toString().trim());
         params.add("Anun_descripcion", txt_nombre.getText().toString().trim());
         params.add("Anun_edad", txt_nombre.getText().toString().trim());
-        params.add("Prov_nombre", cbo_provincia.getSelectedItem().toString().trim());
         params.add("Dist_nombre", cbo_distrito.getSelectedItem().toString().trim());
+        String date = new SimpleDateFormat("yyyy-MM-dd").format(new Date());
+        params.add("Anun_fecha_public", date);
+        params.add("Anun_imagen", image_view_to_base64(jiv_foto_mascota));
 
         ahc_anuncio.post(s_url, params, new BaseJsonHttpResponseHandler() {
             @Override
