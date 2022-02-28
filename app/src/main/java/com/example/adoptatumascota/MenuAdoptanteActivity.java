@@ -7,6 +7,7 @@ import android.view.Menu;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.example.adoptatumascota.clases.Usuario;
 import com.example.adoptatumascota.databinding.NavHeaderMenuAdoptanteBinding;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.navigation.NavigationView;
@@ -36,8 +37,7 @@ public class MenuAdoptanteActivity extends AppCompatActivity {
         binding = ActivityMenuAdoptanteBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-        String prueba= "Protector";
-        String usuario= getIntent().getStringExtra("usuario");
+        Usuario usuario= (Usuario) getIntent().getSerializableExtra("usuario");
         setSupportActionBar(binding.appBarMenuAdoptante.toolbar);
 
         DrawerLayout drawer = binding.drawerLayout;
@@ -52,11 +52,11 @@ public class MenuAdoptanteActivity extends AppCompatActivity {
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);
 
-        isAdoptante(navigationView,prueba);
-        llenadoUsuario(navigationView, usuario);
+        isAdoptante(navigationView,usuario.getRol_ID());
+        llenadoUsuario(navigationView, usuario.getUsu_nombre(), usuario.getUsu_apellidos(),usuario.getUsu_correo());
     }
-    public void isAdoptante(NavigationView navigationView, String usuario){
-        if (usuario =="Adoptante"){
+    public void isAdoptante(NavigationView navigationView, int rol){
+        if (rol ==2){
             Menu menuNav= navigationView.getMenu();
             MenuItem nav_item2 = menuNav.findItem(R.id.agregarAnuncioFragment);
             MenuItem nav_item3 = menuNav.findItem(R.id.misAnunciosFragment);
@@ -65,14 +65,14 @@ public class MenuAdoptanteActivity extends AppCompatActivity {
         }
     }
 
-    public void llenadoUsuario(NavigationView navigationView, String usuario){
+    public void llenadoUsuario(NavigationView navigationView, String nombre, String apellidos, String correo){
         View vistaHeader = navigationView.getHeaderView(0);
 
         TextView txt_usuario = vistaHeader.findViewById(R.id.nomusuario);
         TextView txt_correo = vistaHeader.findViewById(R.id.textViewemail);
 
-        txt_usuario.setText(usuario);
-        txt_correo.setText(usuario);
+        txt_usuario.setText(nombre + apellidos);
+        txt_correo.setText(correo);
     }
 
     @Override

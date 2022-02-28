@@ -48,7 +48,7 @@
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:passwordToggleEnabled="false">
+            app:passwordToggleEnabled="true">
 
             <EditText
                 android:id="@+id/login_txt_contrasenia"

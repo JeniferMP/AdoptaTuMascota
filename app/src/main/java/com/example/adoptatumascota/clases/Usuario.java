@@ -10,11 +10,12 @@ public class Usuario implements Serializable {
     private String Usu_telefono;
     private String Usu_direccion;
     private String Usu_correo;
+    private String Usu_contrasenia;
 
     public Usuario() {
     }
 
-    public Usuario(int usuario_ID, int rol_ID, String usu_nombre, String usu_apellidos, String usu_telefono, String usu_direccion, String usu_correo) {
+    public Usuario(int usuario_ID, int rol_ID, String usu_nombre, String usu_apellidos, String usu_telefono, String usu_direccion, String usu_correo, String usu_contrasenia) {
         Usuario_ID = usuario_ID;
         Rol_ID = rol_ID;
         Usu_nombre = usu_nombre;
@@ -22,6 +23,7 @@ public class Usuario implements Serializable {
         Usu_telefono = usu_telefono;
         Usu_direccion = usu_direccion;
         Usu_correo = usu_correo;
+        Usu_contrasenia = usu_contrasenia;
     }
 
     public int getUsuario_ID() {
@@ -78,5 +80,13 @@ public class Usuario implements Serializable {
 
     public void setUsu_correo(String usu_correo) {
         Usu_correo = usu_correo;
+    }
+
+    public String getUsu_contrasenia() {
+        return Usu_contrasenia;
+    }
+
+    public void setUsu_contrasenia(String usu_contrasenia) {
+        Usu_contrasenia = usu_contrasenia;
     }
 }

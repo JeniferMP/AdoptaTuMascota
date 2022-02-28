@@ -14,6 +14,7 @@ import android.widget.Toast;
 
 import com.example.adoptatumascota.SQLite.Sesion;
 import com.example.adoptatumascota.clases.Hash;
+import com.example.adoptatumascota.clases.Usuario;
 import com.loopj.android.http.AsyncHttpClient;
 import com.loopj.android.http.BaseJsonHttpResponseHandler;
 import com.loopj.android.http.RequestParams;
@@ -87,17 +88,25 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
                             }else{
                                 //guardar los datos del json en la clase
-
+                                Usuario usuario = new Usuario();
+                                usuario.setUsuario_ID(usuario_id);
+                                usuario.setRol_ID(jsonArray.getJSONObject(0).getInt("Rol_ID"));
+                                usuario.setUsu_nombre(jsonArray.getJSONObject(0).getString("Usu_nombre"));
+                                usuario.setUsu_apellidos(jsonArray.getJSONObject(0).getString("Usu_apellidos"));
+                                usuario.setUsu_telefono(jsonArray.getJSONObject(0).getString("Usu_telefono"));
+                                usuario.setUsu_direccion(jsonArray.getJSONObject(0).getString("Usu_direccion"));
+                                usuario.setUsu_correo(jsonArray.getJSONObject(0).getString("Usu_correo"));
+                                usuario.setUsu_contrasenia(jsonArray.getJSONObject(0).getString("Usu_contrasenia"));
                                 if (chk_recordar.isChecked()){
                                     Sesion sesion= new Sesion(getApplicationContext());
-                                    //sesion.agregar_usuario(1,usuario, contrasenia );
+                                    sesion.agregar_usuario(usuario.getUsuario_ID(),usuario.getUsu_correo(), usuario.getUsu_contrasenia() );
 
                                     Toast.makeText(getApplicationContext(),"Recordó sesión",Toast.LENGTH_SHORT).show();
                                 }
 
-                                Intent i_principal= new Intent(getApplicationContext(), MenuAdoptanteActivity.class);
-                                //i_principal.putExtra("usuario",usuario);//nombre del argumento, valor
-                                startActivity(i_principal);
+                                Intent menu= new Intent(getApplicationContext(), MenuAdoptanteActivity.class);
+                                menu.putExtra("usuario",usuario);//nombre del argumento, valor
+                                startActivity(menu);
                                 finish();
                             }
                         }
