@@ -118,8 +118,8 @@ public class AgregarAnuncioFragment extends Fragment implements View.OnClickList
         jiv_foto_mascota= v_agr_anun.findViewById(R.id.crear_anuncio_iv_foto_mascota);
 
 
-        Bundle datos= getArguments();
-        usuario= (Usuario) datos.getSerializable("usuario");
+        /*Bundle datos= getArguments();
+        usuario= (Usuario) datos.getSerializable("usuario");*/
 
         btn_agregar.setOnClickListener(this);
         btn_elegir.setOnClickListener(this);
@@ -176,6 +176,10 @@ public class AgregarAnuncioFragment extends Fragment implements View.OnClickList
             }
         });
     }
+
+    /*public void (Bundle args){
+        Usuario u= args.getSerializable("usuario");
+    }*/
 
     private void llenar_ditritos(int id_prov) {
         cbo_distrito.setAdapter(new ArrayAdapter<String>(getContext(), android.R.layout.simple_spinner_dropdown_item,

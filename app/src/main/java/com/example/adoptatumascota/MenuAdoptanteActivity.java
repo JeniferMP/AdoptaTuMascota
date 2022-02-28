@@ -10,6 +10,7 @@ import android.widget.TextView;
 import com.example.adoptatumascota.clases.Usuario;
 import com.example.adoptatumascota.databinding.NavHeaderMenuAdoptanteBinding;
 import com.example.adoptatumascota.nav.AgregarAnuncioFragment;
+import com.example.adoptatumascota.nav.CerrarSesionFragment;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.navigation.NavigationView;
 
@@ -38,7 +39,6 @@ public class MenuAdoptanteActivity extends AppCompatActivity {
         binding = ActivityMenuAdoptanteBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-
         setSupportActionBar(binding.appBarMenuAdoptante.toolbar);
 
         DrawerLayout drawer = binding.drawerLayout;
@@ -57,6 +57,12 @@ public class MenuAdoptanteActivity extends AppCompatActivity {
         isAdoptante(navigationView,usuario.getRol_ID());
         llenadoUsuario(navigationView, usuario.getUsu_nombre(), usuario.getUsu_apellidos(),usuario.getUsu_correo());
 
+        /*Bundle datos= new Bundle();
+        datos.putSerializable("usuario", usuario);
+        Fragment ft= (Fragment) navigationView.getMenu().getItem(R.id.agregarAnuncioFragment);
+        ft.setArguments(datos);*/
+
+
         //pasar datos
         /*if(navigationView.getMenu().getItem(R.id.anunciosFragment).==true){
             nav*/
@@ -68,6 +74,35 @@ public class MenuAdoptanteActivity extends AppCompatActivity {
 
 
     }
+    /*@Override
+    public boolean onOptionsItemSelected(MenuItem item ) {
+        // Handle item selection
+        switch (item.getItemId()) {
+            case R.id.agregarAnuncioFragment:
+                anuncio();
+                return true;
+            case R.id.cerrarSesionFragment:
+                cerrar();
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+    }
+
+    private void anuncio( ){
+        Bundle datos= new Bundle();
+        datos.putSerializable("usuario", usuario);
+        AgregarAnuncioFragment an= new AgregarAnuncioFragment();
+        an.setArguments(datos);
+
+    }
+    private void cerrar(){
+        Bundle datos= new Bundle();
+        datos.putSerializable("usuario", usuario);
+        CerrarSesionFragment cs= new CerrarSesionFragment();
+        cs.setArguments(datos);
+
+    }*/
     public void isAdoptante(NavigationView navigationView, int rol){
         if (rol ==2){
             Menu menuNav= navigationView.getMenu();

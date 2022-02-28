@@ -14,6 +14,7 @@ import android.widget.EditText;
 import com.example.adoptatumascota.LoginActivity;
 import com.example.adoptatumascota.R;
 import com.example.adoptatumascota.SQLite.Sesion;
+import com.example.adoptatumascota.clases.Usuario;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -21,6 +22,7 @@ import com.example.adoptatumascota.SQLite.Sesion;
  * create an instance of this fragment.
  */
 public class CerrarSesionFragment extends Fragment implements View.OnClickListener{
+    Usuario usuario;
     EditText txt_correo, txt_clave;
     Button btn_cerrarSesion;
     // TODO: Rename parameter arguments, choose names that match
@@ -73,7 +75,12 @@ public class CerrarSesionFragment extends Fragment implements View.OnClickListen
         btn_cerrarSesion= v_cerrar.findViewById(R.id.cerrar_btn_Salir);
 
         btn_cerrarSesion.setOnClickListener(this);
+
+        /*Bundle datos= getArguments();
+        usuario= (Usuario) datos.getSerializable("usuario");*/
         return v_cerrar;
+
+
     }
 
     @Override
@@ -87,7 +94,7 @@ public class CerrarSesionFragment extends Fragment implements View.OnClickListen
     }
 
     private void cerrar_sesion() {
-        Sesion sesion= new Sesion(getContext());
+        /*Sesion sesion= new Sesion(getContext());
         sesion.eliminar_usuario(1);
 
         //destruir historial
@@ -95,6 +102,6 @@ public class CerrarSesionFragment extends Fragment implements View.OnClickListen
 
         //cargar actividad Login
         Intent i_login= new Intent(getContext(), LoginActivity.class);
-        startActivity(i_login);
+        startActivity(i_login);*/
     }
 }
