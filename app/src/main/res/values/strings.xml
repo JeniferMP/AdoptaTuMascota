@@ -37,6 +37,9 @@
     <string name="item_btn_ver_mas">Ver más</string>
 
     <string name="cerrar_btn_salir">Salir</string>
+
+    <string name="crear_anuncio_btn_elegir">Elegir</string>
+    <string name="crear_anuncio_btn_guardar">Registrar</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
