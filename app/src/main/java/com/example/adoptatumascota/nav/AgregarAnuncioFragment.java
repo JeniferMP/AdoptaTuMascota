@@ -1,9 +1,21 @@
 package com.example.adoptatumascota.nav;
 
+import android.Manifest;
+import android.app.Activity;
+import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.graphics.Bitmap;
+import android.graphics.drawable.BitmapDrawable;
+import android.net.Uri;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 
+import android.util.Base64;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,6 +23,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.Toast;
 
@@ -23,6 +36,8 @@ import com.loopj.android.http.RequestParams;
 import org.json.JSONArray;
 import org.json.JSONException;
 
+import java.io.ByteArrayOutputStream;
+
 import cz.msebera.android.httpclient.Header;
 
 /**
@@ -34,7 +49,12 @@ public class AgregarAnuncioFragment extends Fragment implements View.OnClickList
 
     Spinner cbo_especie, cbo_distrito, cbo_provincia;
     EditText txt_nombre, txt_raza, txt_descripcion, txt_edad;
-    Button btn_guardar;
+    Button btn_elegir, btn_agregar;
+    ImageView jiv_foto_mascota;
+
+    private static final int REQUEST_CODE_PERMISSION = 1;
+    private static final int REQUEST_CODE_GALLERY = 2;
+
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -87,17 +107,20 @@ public class AgregarAnuncioFragment extends Fragment implements View.OnClickList
         txt_raza=v_agr_anun.findViewById(R.id.crear_anuncio_txt_raza);
         txt_descripcion=v_agr_anun.findViewById(R.id.crear_anuncio_txt_descripcion);
         txt_edad=v_agr_anun.findViewById(R.id.crear_anuncio_txt_edad);
-        btn_guardar=v_agr_anun.findViewById(R.id.crear_anuncio_btn_guardar);
+        btn_agregar=v_agr_anun.findViewById(R.id.crear_anuncio_btn_agregar);
+        btn_elegir= v_agr_anun.findViewById(R.id.crear_anuncio_btn_elegir);
+        jiv_foto_mascota= v_agr_anun.findViewById(R.id.crear_anuncio_iv_foto_mascota);
 
 
-        btn_guardar.setOnClickListener(this);
+        btn_agregar.setOnClickListener(this);
+        btn_elegir.setOnClickListener(this);
         cbo_provincia.setOnItemSelectedListener(this);
 
         //llenar especie
         llenar_cbo("Especie","http://adopta-tu-mascota.atwebpages.com/WS/mostrar_controler.php", cbo_especie, "4");
+
+        //llenar Provincia
         llenar_cbo("Provincia","http://adopta-tu-mascota.atwebpages.com/WS/mostrar_controler.php",cbo_provincia, "3");
-
-
 
         return v_agr_anun;
     }
@@ -194,12 +217,63 @@ public class AgregarAnuncioFragment extends Fragment implements View.OnClickList
     @Override
     public void onClick(View view) {
         switch (view.getId()){
-            case R.id.crear_anuncio_btn_guardar:
+            case R.id.crear_anuncio_btn_agregar:
                 guardar_anuncio();
+                break;
+            case R.id.crear_anuncio_btn_elegir:
+                elegir_foto();
                 break;
         }
 
     }
+
+    private void elegir_foto(){
+
+        requestPermissions(new String[] {Manifest.permission.READ_EXTERNAL_STORAGE},
+                REQUEST_CODE_PERMISSION);
+        Toast.makeText(getContext(), "imagen", Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        if(requestCode == REQUEST_CODE_PERMISSION){
+            if(grantResults.length>0 && grantResults[0] == PackageManager.PERMISSION_GRANTED){
+                Intent i_file_chooser = new Intent(Intent.ACTION_PICK);
+                i_file_chooser.setType("image/*");
+                startActivityForResult(i_file_chooser, REQUEST_CODE_GALLERY);
+            }
+            else
+                Toast.makeText(getContext(), "No se puede acceder al almacenamiento externo", Toast.LENGTH_SHORT).show();
+        }
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+    }
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        if(requestCode == REQUEST_CODE_GALLERY){
+            if(resultCode == Activity.RESULT_OK && data != null){
+                Uri uri = data.getData();
+                jiv_foto_mascota.setImageURI(uri);
+            }
+            else
+                Toast.makeText(getContext(), "Debe elegir una imagen", Toast.LENGTH_SHORT).show();
+        }
+        super.onActivityResult(requestCode, resultCode, data);
+    }
+
+    private String image_view_to_base64(ImageView jiv_foto_anuncio) {
+        Bitmap bitmap = ((BitmapDrawable)jiv_foto_anuncio.getDrawable()).getBitmap();
+
+        ByteArrayOutputStream stream = new ByteArrayOutputStream();
+        bitmap.compress(Bitmap.CompressFormat.JPEG, 100, stream);
+
+        byte[] byteArray = stream.toByteArray();
+        String imagen = Base64.encodeToString(byteArray, Base64.DEFAULT);
+
+        return  imagen;
+    }
+
+
 
     private void guardar_anuncio() {
         if(!validar_formulario())

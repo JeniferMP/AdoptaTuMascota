@@ -136,14 +136,14 @@
                     android:layout_marginTop="30dp"
                     android:orientation="horizontal">
                     <ImageView
-                        android:id="@+id/agr_iv_foto_auto"
+                        android:id="@+id/crear_anuncio_iv_foto_mascota"
                         android:layout_width="180dp"
                         android:layout_height="150dp"
                         android:src="@mipmap/ic_launcher">
                     </ImageView>
                     <Button
                         android:layout_gravity="center"
-                        android:id="@+id/agr_btn_elegir"
+                        android:id="@+id/crear_anuncio_btn_elegir"
                         android:layout_width="100dp"
                         android:layout_height="wrap_content"
                         android:background="#e2924d"
@@ -154,15 +154,15 @@
                 </LinearLayout>
 
             <Button
-                android:id="@+id/crear_anuncio_btn_guardar"
+                android:id="@+id/crear_anuncio_btn_agregar"
                 android:layout_width="120dp"
                 android:layout_height="50dp"
                 android:layout_marginTop="20dp"
                 android:layout_marginBottom="20dp"
                 android:layout_gravity="center"
                 android:backgroundTint="#569ad8"
-                android:hint="@string/crear_anuncio_btn_guardar"
-                android:text="Guardar"
+                android:hint="@string/crear_anuncio_btn_agregar"
+                android:text="Agregar"
                 android:textSize="23dp"
                 android:textAllCaps="false"
                 app:cornerRadius="20dp" />

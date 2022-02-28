@@ -39,7 +39,7 @@
     <string name="cerrar_btn_salir">Salir</string>
 
     <string name="crear_anuncio_btn_elegir">Elegir</string>
-    <string name="crear_anuncio_btn_guardar">Registrar</string>
+    <string name="crear_anuncio_btn_agregar">Agregar</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
