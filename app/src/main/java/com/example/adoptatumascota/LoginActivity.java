@@ -60,7 +60,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         Hash hash= new Hash();
         contrasenia= (b_recordo==true? contrasenia:hash.StringToHash(contrasenia, "SHA1"));
 
-        if (usuario.equals("Adoptante")&& contrasenia.equals("7c222fb2927d828af22f592134e8932480637c0d")){
+        if (usuario.equals("Adoptante")&& contrasenia.equals("7c4a8d09ca3762af61e59520943dc26494f8941b")){
             if (chk_recordar.isChecked()){
                 Sesion sesion= new Sesion(getApplicationContext());
                 sesion.agregar_usuario(1,usuario, contrasenia );
@@ -74,6 +74,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             finish();
         }else {
             Toast.makeText(this,"Credenciales Incorrectas",Toast.LENGTH_LONG).show();
+
         }
 
     }

@@ -8,6 +8,7 @@
     <string name="button">Button</string>
     <string name="reg_btn_atras">Atras</string>
     <string name="reg_btn_registrar">Registro</string>
+    <string name="Términos_Condiciones">Términos y Condiciones</string>
 
     <string name="title_activity_menu_adoptante">MenuAdoptanteActivity</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
@@ -24,10 +25,7 @@
     <string name="reg_Tipo_Usuario">Tipo Usuario</string>
     <string name="recordar">Recordar</string>
     <string name="todo">TODO</string>
-    <string-array name="dlangs">
-        <item>usuario</item>
-        <item>usuario2</item>
-    </string-array>
+    <string-array name="dlangs"> </string-array>
 
     <string name="item_lbl_anunciante">Anunciante</string>
     <string name="item_lbl_direccion">Dirección</string>

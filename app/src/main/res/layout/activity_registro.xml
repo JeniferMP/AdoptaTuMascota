@@ -38,7 +38,9 @@
             android:entries="@array/dlangs"
             android:prompt="@string/reg_Tipo_Usuario" />
 
-
+<com.google.android.material.textfield.TextInputLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
         <EditText
             android:id="@+id/reg_lbl_nombre"
             android:layout_width="match_parent"
@@ -52,6 +54,11 @@
             android:textColor="@android:color/holo_blue_bright"
             android:layout_marginTop="10dp"
             android:background="#ffe4e1"/>
+</com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
         <EditText
             android:id="@+id/reg_lbl_apellido"
             android:layout_width="match_parent"
@@ -65,7 +72,10 @@
             android:padding="15dp"
             android:background="#ffe4e1"
             android:textColor="@android:color/holo_blue_bright" />
-
+        </com.google.android.material.textfield.TextInputLayout>
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
         <EditText
             android:id="@+id/reg_lbl_direccion"
             android:layout_width="match_parent"
@@ -79,7 +89,10 @@
             android:padding="15dp"
             android:layout_marginTop="10dp"
             android:textColor="@android:color/holo_blue_bright" />
-
+        </com.google.android.material.textfield.TextInputLayout>
+<com.google.android.material.textfield.TextInputLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
         <EditText
             android:id="@+id/reg_lbl_telefono"
             android:layout_width="match_parent"
@@ -93,7 +106,10 @@
             android:background="#ffe4e1"
             android:layout_marginTop="10dp"
             android:textColor="@android:color/holo_blue_bright" />
-
+    </com.google.android.material.textfield.TextInputLayout>
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
         <EditText
             android:id="@+id/reg_lbl_correo"
             android:layout_width="match_parent"
@@ -107,6 +123,11 @@
             android:layout_marginTop="10dp"
             android:background="#ffe4e1"
             android:textColor="@android:color/holo_blue_bright" />
+        </com.google.android.material.textfield.TextInputLayout>
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:passwordToggleEnabled="true">
 
         <EditText
             android:id="@+id/reg_lbl_contraseña"
@@ -121,7 +142,13 @@
             android:layout_marginTop="10dp"
             android:background="#ffe4e1"
             android:textColor="@android:color/holo_blue_bright" />
+    </com.google.android.material.textfield.TextInputLayout>
 
+
+     <com.google.android.material.textfield.TextInputLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:passwordToggleEnabled="true">
         <EditText
             android:id="@+id/reg_lbl_confcontraseña"
             android:layout_width="match_parent"
@@ -135,7 +162,18 @@
             android:layout_marginTop="10dp"
             android:background="#ffe4e1"
             android:textColor="@android:color/holo_blue_bright" />
+         <CheckBox
+             android:id="@+id/reg_chk_terminos"
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:layout_marginTop="10dp"
+             android:fontFamily="@font/allerta"
+             android:minHeight="48dp"
+             android:text="@string/Términos_Condiciones"
+             android:textColor="@android:color/black"
+             android:textSize="16sp" />
 
+    </com.google.android.material.textfield.TextInputLayout>
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -164,6 +202,5 @@
                 app:backgroundTint="#ef9a9a" />
         </LinearLayout>
     </LinearLayout>
-
 
 </ScrollView>

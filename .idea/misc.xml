@@ -4,6 +4,8 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/UNIVERSIDAD/VERANO_2022/VIJAP/AdoptaTuMascota/app/src/main/res/layout/activity_login.xml" value="0.19972826086956522" />
+        <entry key="..\:/Users/JvCTH/AndroidStudioProjects/AdoptaTuMascota/app/src/main/res/layout/activity_login.xml" value="0.22780797101449277" />
+        <entry key="..\:/Users/JvCTH/AndroidStudioProjects/AdoptaTuMascota/app/src/main/res/layout/activity_registro.xml" value="0.22780797101449277" />
         <entry key="..\:/Users/MICRONICS/AndroidStudioProjects/AdoptaTuMascota/app/src/main/res/drawable-anydpi/ic_action_nombrepet.xml" value="0.3165" />
         <entry key="..\:/Users/MICRONICS/AndroidStudioProjects/AdoptaTuMascota/app/src/main/res/drawable/bg_color.xml" value="0.3165" />
         <entry key="..\:/Users/MICRONICS/AndroidStudioProjects/AdoptaTuMascota/app/src/main/res/drawable/custom_input.xml" value="0.3165" />
@@ -16,7 +18,6 @@
         <entry key="..\:/Users/MICRONICS/AndroidStudioProjects/AdoptaTuMascota/app/src/main/res/layout/activity_registro_anuncio.xml" value="0.3333333333333333" />
         <entry key="..\:/Users/MICRONICS/AndroidStudioProjects/AdoptaTuMascota/app/src/main/res/layout/app_bar_menu_adoptante.xml" value="0.33" />
         <entry key="..\:/Users/MICRONICS/AndroidStudioProjects/AdoptaTuMascota/app/src/main/res/layout/content_menu_adoptante.xml" value="0.17831813576494426" />
-        <entry key="..\:/Users/MICRONICS/AndroidStudioProjects/AdoptaTuMascota/app/src/main/res/layout/fragment_agregar_anuncio.xml" value="0.33" />
         <entry key="..\:/Users/MICRONICS/AndroidStudioProjects/AdoptaTuMascota/app/src/main/res/layout/fragment_gallery.xml" value="0.1" />
         <entry key="..\:/Users/MICRONICS/AndroidStudioProjects/AdoptaTuMascota/app/src/main/res/layout/fragment_home.xml" value="0.17831813576494426" />
         <entry key="..\:/Users/MICRONICS/AndroidStudioProjects/AdoptaTuMascota/app/src/main/res/layout/fragment_slideshow.xml" value="0.17831813576494426" />

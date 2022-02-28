@@ -37,7 +37,6 @@ public class Sesion extends SQLiteOpenHelper {
             db.close();
             b_ret= true;
         }
-
         return b_ret;
     }
 
@@ -66,7 +65,7 @@ public class Sesion extends SQLiteOpenHelper {
     }
 
     public boolean eliminar_usuario(int i_id){
-        boolean b_ret= false;
+           boolean b_ret= false;
 
         SQLiteDatabase db= getWritableDatabase();
         if (db!=null){
