@@ -28,6 +28,7 @@ import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.example.adoptatumascota.R;
+import com.example.adoptatumascota.clases.Usuario;
 import com.loopj.android.http.AsyncHttpClient;
 import com.loopj.android.http.BaseJsonHttpResponseHandler;
 import com.loopj.android.http.RequestHandle;
@@ -54,6 +55,8 @@ public class AgregarAnuncioFragment extends Fragment implements View.OnClickList
     EditText txt_nombre, txt_raza, txt_descripcion, txt_edad;
     Button btn_elegir, btn_agregar;
     ImageView jiv_foto_mascota;
+    Usuario usuario;
+
 
     private static final int REQUEST_CODE_PERMISSION = 1;
     private static final int REQUEST_CODE_GALLERY = 2;
@@ -115,19 +118,22 @@ public class AgregarAnuncioFragment extends Fragment implements View.OnClickList
         jiv_foto_mascota= v_agr_anun.findViewById(R.id.crear_anuncio_iv_foto_mascota);
 
 
+        Bundle datos= getArguments();
+        usuario= (Usuario) datos.getSerializable("usuario");
+
         btn_agregar.setOnClickListener(this);
         btn_elegir.setOnClickListener(this);
         cbo_provincia.setOnItemSelectedListener(this);
 
         //llenar especie
-        llenar_cbo("Especie","http://adopta-tu-mascota.atwebpages.com/WS/mostrar_controler.php", cbo_especie, "4");
+        llenar_cbo("Especie","http://adopta-tu-mascota.atwebpages.com/WS/mostrar_controler.php", cbo_especie, "4", "Esp_nombre");
 
         //llenar Provincia
-        llenar_cbo("Provincia","http://adopta-tu-mascota.atwebpages.com/WS/mostrar_controler.php",cbo_provincia, "3");
+        llenar_cbo("Provincia","http://adopta-tu-mascota.atwebpages.com/WS/mostrar_controler.php",cbo_provincia, "3", "Prov_nombre");
 
         return v_agr_anun;
     }
-    private void llenar_cbo( String nombre_cbo, String s_url, Spinner cbo, String tipo) {
+    private void llenar_cbo( String nombre_cbo, String s_url, Spinner cbo, String tipo, String var) {
         cbo.setAdapter(new ArrayAdapter<String>(getContext(), android.R.layout.simple_spinner_dropdown_item,
                 new String[]{"Seleccione "+ nombre_cbo}));
 
@@ -145,7 +151,7 @@ public class AgregarAnuncioFragment extends Fragment implements View.OnClickList
                         s_arrayElement[0]="--Seleccione--"+ nombre_cbo;
 
                         for (int i=1; i<jsonArray.length()+1; i++){
-                            s_arrayElement[i]= jsonArray.getJSONObject(i-1).getString("Prov_nombre");
+                            s_arrayElement[i]= jsonArray.getJSONObject(i-1).getString(var);
                         }
 
                         cbo.setAdapter(new ArrayAdapter<String>(getContext(),
@@ -285,14 +291,15 @@ public class AgregarAnuncioFragment extends Fragment implements View.OnClickList
         AsyncHttpClient ahc_anuncio= new AsyncHttpClient();
         String s_url= "http://adopta-tu-mascota.atwebpages.com/WS/agregar_anuncio.php";
         RequestParams params= new RequestParams();
+        params.add("Usuario_ID", String.valueOf(usuario.getUsuario_ID()));
+        params.add("Dist_nombre", cbo_distrito.getSelectedItem().toString().trim());
         params.add("Esp_nombre", cbo_especie.getSelectedItem().toString().trim());
         params.add("Anun_nombre", txt_nombre.getText().toString().trim());
-        params.add("Anun_raza", txt_nombre.getText().toString().trim());
-        params.add("Anun_descripcion", txt_nombre.getText().toString().trim());
-        params.add("Anun_edad", txt_nombre.getText().toString().trim());
-        params.add("Dist_nombre", cbo_distrito.getSelectedItem().toString().trim());
-        String date = new SimpleDateFormat("yyyy-MM-dd").format(new Date());
-        params.add("Anun_fecha_public", date);
+        params.add("Anun_raza", txt_raza.getText().toString().trim());
+        params.add("Anun_descrpcion", txt_descripcion.getText().toString().trim());
+        params.add("Anun_edad", txt_edad.getText().toString().trim());
+        //String date = new SimpleDateFormat("yyyy-MM-dd").format(new Date());
+        params.add("Anun_fecha_public", "2022-02-28");
         params.add("Anun_imagen", image_view_to_base64(jiv_foto_mascota));
 
         ahc_anuncio.post(s_url, params, new BaseJsonHttpResponseHandler() {
@@ -300,7 +307,7 @@ public class AgregarAnuncioFragment extends Fragment implements View.OnClickList
             public void onSuccess(int statusCode, Header[] headers, String rawJsonResponse, Object response) {
                 if(statusCode==200){
                    int i_te_val= rawJsonResponse.length()==0 ? 0 :Integer.parseInt(rawJsonResponse);
-
+                    Toast.makeText(getContext(), cbo_especie.getSelectedItem().toString().trim(), Toast.LENGTH_LONG).show();
                    if(i_te_val==1){
                        Toast.makeText(getContext(), "Anuncio Registrado con éxito", Toast.LENGTH_LONG).show();
 

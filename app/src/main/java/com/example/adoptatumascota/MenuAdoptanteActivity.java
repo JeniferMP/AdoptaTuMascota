@@ -9,10 +9,12 @@ import android.widget.TextView;
 
 import com.example.adoptatumascota.clases.Usuario;
 import com.example.adoptatumascota.databinding.NavHeaderMenuAdoptanteBinding;
+import com.example.adoptatumascota.nav.AgregarAnuncioFragment;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.navigation.NavigationView;
 
 import androidx.annotation.ContentView;
+import androidx.fragment.app.Fragment;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
@@ -24,8 +26,7 @@ import com.example.adoptatumascota.databinding.ActivityMenuAdoptanteBinding;
 
 public class MenuAdoptanteActivity extends AppCompatActivity {
 
-    EditText txtprueba;
-    TextView txtus, textemail;
+    Usuario usuario;
 
     private AppBarConfiguration mAppBarConfiguration;
     private ActivityMenuAdoptanteBinding binding;
@@ -37,7 +38,7 @@ public class MenuAdoptanteActivity extends AppCompatActivity {
         binding = ActivityMenuAdoptanteBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-        Usuario usuario= (Usuario) getIntent().getSerializableExtra("usuario");
+
         setSupportActionBar(binding.appBarMenuAdoptante.toolbar);
 
         DrawerLayout drawer = binding.drawerLayout;
@@ -52,8 +53,20 @@ public class MenuAdoptanteActivity extends AppCompatActivity {
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);
 
+        usuario = (Usuario) getIntent().getSerializableExtra("usuario");
         isAdoptante(navigationView,usuario.getRol_ID());
         llenadoUsuario(navigationView, usuario.getUsu_nombre(), usuario.getUsu_apellidos(),usuario.getUsu_correo());
+
+        //pasar datos
+        /*if(navigationView.getMenu().getItem(R.id.anunciosFragment).==true){
+            nav*/
+            /*Bundle datos= new Bundle();
+            datos.putSerializable("usuario", usuario);
+
+            navController.navigate(R.id.agregarAnuncioFragment,datos);*/
+
+
+
     }
     public void isAdoptante(NavigationView navigationView, int rol){
         if (rol ==2){
