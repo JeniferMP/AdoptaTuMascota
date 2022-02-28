@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.preference.EditTextPreference;
 import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
@@ -115,13 +116,13 @@ public class RegistroActivity extends AppCompatActivity implements View.OnClickL
     }
 
     private void registrar_user() {
-        /*if (!validar_formulario())
-            return;*/
+        if (!validar_formulario())
+            return;
         //precedemos registrar usuario
         AsyncHttpClient ahc_usuario= new AsyncHttpClient();
         String s_url= "http://adopta-tu-mascota.atwebpages.com/WS/agregar_usuario.php";
         RequestParams params= new RequestParams();
-        params.add("Rol_ID", String.valueOf(cbo_tipo_usuario.getSelectedItem()));
+        params.add("Rol_ID", String.valueOf(cbo_tipo_usuario.getSelectedItemPosition()));
         params.add("Usu_nombre", txt_nombre.getText().toString().trim());
         params.add("Usu_apellidos", txt_apellidos.getText().toString().trim());
         params.add("Usu_telefono", txt_telefono.getText().toString().trim());
@@ -137,12 +138,12 @@ public class RegistroActivity extends AppCompatActivity implements View.OnClickL
             public void onSuccess(int statusCode, Header[] headers, String rawJsonResponse, Object response) {
                 if(statusCode==200){
                     int i_te_val = rawJsonResponse.length() == 0 ? 0 : Integer.parseInt(rawJsonResponse);
-                    Toast.makeText(getApplicationContext(), "aqui", Toast.LENGTH_LONG).show();
+
                     if(i_te_val==1){
                         Toast.makeText(getApplicationContext(), "Usuario Registrado con éxito", Toast.LENGTH_LONG).show();
-                        finish();
                         Intent i_mostrar = new Intent(getApplicationContext(), LoginActivity.class);
                         startActivity(i_mostrar);
+                        finish();
 
                     }else{
                         Toast.makeText(getApplicationContext(), "Error al Registrar", Toast.LENGTH_LONG).show();
@@ -172,6 +173,7 @@ public class RegistroActivity extends AppCompatActivity implements View.OnClickL
         }
         if (txt_telefono.getText().toString().length() < 9) {
             Toast.makeText(RegistroActivity.this, "El teléfono requiere mínimo 9 caracteres", Toast.LENGTH_LONG).show();
+            return false;
         }
         if (txt_contasenia.getText().toString().length() < 8) {
             Toast.makeText(RegistroActivity.this, "La contraseña requiere mínimo 8 caracteres", Toast.LENGTH_LONG).show();
